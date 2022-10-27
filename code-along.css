@@ -1,12 +1,14 @@
 /****************************************
 * Transform
 ****************************************/
-.transform-demo > div {
+.transform-demo>div {
   height: 40px;
   background: salmon;
   width: 20%;
   margin: auto;
   display: inline-block;
+  transform: translate(9.2em, -0.25em);
+  opacity: 0.7;
 }
 
 /****************************************
@@ -18,11 +20,14 @@
   width: 200px;
   height: 200px;
   filter: grayscale(100%);
+  transition: 0.7s;
 
 }
 
 .transition-demo img:hover {
-
+  filter: none;
+  transition: ease-in-out 0.7s;
+  transform: scale(1.25) rotate(360deg);
 }
 
 /****************************************
@@ -35,11 +40,37 @@
   width: 500px;
   margin: auto;
   background-color: palegreen;
+  animation: sale-bar 2s forwards;
+  animation-delay: 5s;
+  animation-iteration-count: 10;
 
 }
 
 @keyframes sale-bar {
-  0% { background-color: lightgreen; width: 450px }
-  75% { background-color: #FF033E; width: 125x }
-  100% { background-color: crimson; width: 10px }
+  0% {
+    background-color: lightgreen;
+    width: 450px;
+  }
+
+  25% {
+    background-color: gold;
+    width: 375px;
+  }
+
+  50% {
+    background-color: salmon;
+    width: 250px;
+  }
+
+  75% {
+    background-color: #FF033E;
+    width: 125px;
+    transform: scale(1);
+  }
+
+  100% {
+    background-color: crimson;
+    width: 10px;
+    transform: scale(0);
+  }
 }
